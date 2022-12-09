@@ -3,13 +3,13 @@ import java.util.*;
 
 //2447 별찍기 10
 public class Main {
-    public static void dot(char[][] n, int k) {
-        if (k > n.length) {
+    public static void dot(char[][] n, int k,int length) {
+        if (k > length) {
             return;
         } else {
             int x, y;
-            for (int i = 0; i < n.length; i += k) {
-                for (int j = 0; j < n.length; j += k) {
+            for (int i = 0; i < length; i += k) {
+                for (int j = 0; j < length; j += k) {
                     x = i + (k / 3);
                     y = j + (k / 3);
                     for (int fi = 0; fi < k / 3; fi++) {
@@ -20,7 +20,7 @@ public class Main {
 
                 }
             }
-            dot(n, k * 3);
+            dot(n, k * 3,length);
         }
     }
 
@@ -34,7 +34,7 @@ public class Main {
             Arrays.fill(i, '*');
         }
 
-        dot(n, 3);
+        dot(n, 3, N);
         for (char[] i : n) {
             for (char j : i) {
                 bw.write(j);
