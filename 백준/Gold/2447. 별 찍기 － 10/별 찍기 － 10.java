@@ -3,7 +3,7 @@ import java.util.*;
 
 //2447 별찍기 10
 public class Main {
-    public static void dot(String[][] n, int k) {
+    public static void dot(char[][] n, int k) {
         if (k > n.length) {
             return;
         } else {
@@ -14,7 +14,7 @@ public class Main {
                     y = j + (k / 3);
                     for (int fi = 0; fi < k / 3; fi++) {
                         for (int fj = 0; fj < k / 3; fj++) {
-                            n[x+fi][y+fj] = " ";
+                            n[x+fi][y+fj] = ' ';
                         }
                     }
 
@@ -29,14 +29,14 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out)); // 할당된 버퍼에 값 넣어주기
 
         int N = Integer.parseInt(br.readLine());
-        String[][] n = new String[N][N];
-        for (String[] i : n) {
-            Arrays.fill(i, "*");
+        char[][] n = new char[N][N];
+        for (char[] i : n) {
+            Arrays.fill(i, '*');
         }
 
         dot(n, 3);
-        for (String[] i : n) {
-            for (String j : i) {
+        for (char[] i : n) {
+            for (char j : i) {
                 bw.write(j);
             }
             bw.write("\n");;
